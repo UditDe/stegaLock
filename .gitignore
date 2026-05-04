@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+build/
+dist/
+.venv/
+
+# Node / JS
+node_modules/
+dist/
+dist-ssr/
+npm-debug.log*
+
+# OS & Editors
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# Ignore images in APPS/data-encryption-project
+APPS/data-encryption-project/**/*.png
+APPS/data-encryption-project/**/*.jpg
+APPS/data-encryption-project/**/*.jpeg
+APPS/data-encryption-project/**/*.gif
+APPS/data-encryption-project/**/*.bmp
+APPS/data-encryption-project/**/*.webp
+
+# Environment/Local secrets
+*.local
+.env*
+
+

@@ -1,0 +1,29 @@
+[project]
+name = "data-encryption-project"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+"pillow",
+"numpy",
+"cryptography"
+]
+
+keywords = ["steganography", "encryption", "security", "cli", "image-processing"]
+
+classifiers = [
+"Programming Language :: Python :: 3",
+"License :: OSI Approved :: MIT License",
+"Operating System :: OS Independent",
+"Topic :: Security :: Cryptography",
+]
+
+[project.scripts]
+pixelvault = "stega"
+
+[tool.setuptools]
+py-modules = ["stega"]
+
+[tool.setuptools.package-data]
+"" = [".md"]
