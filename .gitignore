@@ -26,9 +26,20 @@ APPS/data-encryption-project/**/*.jpeg
 APPS/data-encryption-project/**/*.gif
 APPS/data-encryption-project/**/*.bmp
 APPS/data-encryption-project/**/*.webp
+APPS/**/*.jpg
+APPS/**/*.png
+APPS/**/*.jpeg
+APPS/**/*.gif
+APPS/**/*.bmp
+APPS/**/*.webp
+
 
 # Environment/Local secrets
 *.local
 .env*
 
 
+*.zip
+
+# Reference
+APPS/hash-vault
