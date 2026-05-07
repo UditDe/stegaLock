@@ -55,6 +55,8 @@
         justify-self: flex-end;
         align-self: center;
         color: #fefefe;
+        font-weight: 600;
+        font-size: large;
         background-color: #262C34;
         outline: none;
         border: 1px solid #fefefe;
@@ -62,5 +64,6 @@
         padding: 0.5rem 1rem;
         width: max-content;
         margin-top: auto;
+        cursor: pointer;
     }
 }
