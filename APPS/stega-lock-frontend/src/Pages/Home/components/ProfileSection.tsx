@@ -5,7 +5,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 const ProfileSection: React.FC = () => {
     const { user, logout } = useAuth0();
-    console.log(user)
+    // console.log(user)
     return (
         <div className="profile-wrapper">
             <div className="profile-image">
