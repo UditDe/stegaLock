@@ -22,7 +22,7 @@ const LandingNav: React.FC = () => (
       </li>
 
       <li>
-        <a href="https://github.com" className="nav-github">
+        <a href="https://github.com/UditDe/stegaLock" className="nav-github">
           <GithubIcon size={15} />
           GitHub
         </a>

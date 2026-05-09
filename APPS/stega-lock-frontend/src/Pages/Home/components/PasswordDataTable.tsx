@@ -3,6 +3,7 @@ import "./PasswordDataTable.scss";
 import { MdOutlineEnhancedEncryption } from "react-icons/md";
 import { RxLinkBreak2 } from "react-icons/rx";
 import { IoCheckmarkDoneOutline } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 type rowType = {
     name: string;
@@ -61,16 +62,20 @@ const TableRows: React.FC<TableRows> = ({ row, idx }) => {
 };
 
 const PasswordData: React.FC = () => {
+    const navigate = useNavigate();
     return (
         <div className="password-data-wrapper">
             <div className="btn-containers">
-                <button className="decode-btn">
-                    <RxLinkBreak2 />
-                    Decode
-                </button>
-                <button className="encode-btn">
-                    <MdOutlineEnhancedEncryption size={20} /> Encode
-                </button>
+                <button className="back-btn" onClick={() => navigate("/")}>Back</button>
+                <div className="control-btn">
+                    <button className="decode-btn">
+                        <RxLinkBreak2 />
+                        Decode
+                    </button>
+                    <button className="encode-btn">
+                        <MdOutlineEnhancedEncryption size={20} /> Encode
+                    </button>
+                </div>
             </div>
             <div className="data-table">
                 <table className="password-table">

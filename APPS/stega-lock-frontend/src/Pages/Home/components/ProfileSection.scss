@@ -3,17 +3,20 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #0D1117;
+    background-color: var(--bg-canvas);
     padding: 1rem 2rem;
-    border-right: 0.5px solid #fefefe;
+    border-right: 1px solid var(--border-default);
+    position: relative;
+    z-index: 1;
+
     .profile-image {
         display: inline-flex;
         justify-content: center;
         align-items: center;
         align-self: center;
-        border: 1px solid #fefefe;
+        border: 1px solid var(--border-default);
         border-radius: 50%;
-        background-color: #010409;
+        background-color: var(--bg-overlay);
         aspect-ratio: 1 / 1;
         padding: 20px;
         width: fit-content;
@@ -26,6 +29,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            color: var(--fg-default);
+        }
+        img {
+            width: 120%;
+            height: 120%;
+            object-fit: cover;
+            border-radius: 50%;
         }
     }
 
@@ -37,16 +47,18 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 30px;
+            font-size: 25px;
             font-weight: 700;
+            color: var(--fg-default);
         }
-    
+
         .user-email {
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 35px;
-            font-weight: 100;
+            font-weight: lighter;
+            color: var(--fg-muted);
         }
     }
 
@@ -57,16 +69,20 @@
         align-items: center;
         justify-self: flex-end;
         align-self: center;
-        color: #fefefe;
+        color: var(--fg-default);
         font-weight: 600;
         font-size: large;
-        background-color: #262C34;
+        background-color: var(--bg-subtle);
         outline: none;
-        border: 1px solid #fefefe;
+        border: 1px solid var(--border-default);
         border-radius: 5px;
         padding: 0.5rem 1rem;
         width: max-content;
         margin-top: auto;
         cursor: pointer;
+
+        &:hover {
+            background-color: var(--border-muted);
+        }
     }
 }
