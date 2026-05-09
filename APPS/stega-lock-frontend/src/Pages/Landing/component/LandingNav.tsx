@@ -4,7 +4,7 @@ import GithubIcon from './GithubIcon';
 const LandingNav: React.FC = () => (
   <nav>
     <a className="nav-logo" href="#">
-      <span className="logo-icon">🔐</span>
+      <img src="/3.svg" alt="" />
       StegaLock
     </a>
 
