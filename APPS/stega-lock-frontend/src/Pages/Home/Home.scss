@@ -21,4 +21,11 @@
         pointer-events: none;
         z-index: 0;
     }
+
+    @media screen and (max-width: 1024px) {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
+    }
 }

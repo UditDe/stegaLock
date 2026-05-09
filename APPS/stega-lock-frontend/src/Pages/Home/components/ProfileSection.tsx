@@ -17,7 +17,8 @@ const ProfileSection: React.FC = () => {
                 <span className="user-email">{user?.email}</span>
             </div>
             <button className="log-out-btn" onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
-                <CiLogout size={20} />Log Out
+                <CiLogout size={20} />
+                <span className="logout-text">Log Out</span>
             </button>
         </div>
     );

@@ -63,20 +63,105 @@ const TableRows: React.FC<TableRows> = ({ row, idx }) => {
 
 const PasswordData: React.FC = () => {
     const navigate = useNavigate();
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [passwordName, setPasswordName] = useState("");
+    const [passwordValue, setPasswordValue] = useState("");
+
+    const [isDecodeModalOpen, setIsDecodeModalOpen] = useState(false);
+    const [decodeHash, setDecodeHash] = useState("");
+    const [decodeImage, setDecodeImage] = useState<File | null>(null);
+
     return (
         <div className="password-data-wrapper">
             <div className="btn-containers">
                 <button className="back-btn" onClick={() => navigate("/")}>Back</button>
                 <div className="control-btn">
-                    <button className="decode-btn">
+                    <button className="decode-btn" onClick={() => setIsDecodeModalOpen(true)}>
                         <RxLinkBreak2 />
                         Decode
                     </button>
-                    <button className="encode-btn">
+                    <button className="encode-btn" onClick={() => setIsModalOpen(true)}>
                         <MdOutlineEnhancedEncryption size={20} /> Encode
                     </button>
                 </div>
             </div>
+
+            {isModalOpen && (
+                <div className="modal-overlay">
+                    <div className="modal-content">
+                        <h2>Encode Password</h2>
+                        <div className="input-group">
+                            <label>Password Name</label>
+                            <input
+                                type="text"
+                                value={passwordName}
+                                onChange={(e) => setPasswordName(e.target.value)}
+                                placeholder="e.g. Google"
+                            />
+                        </div>
+                        <div className="input-group">
+                            <label>Password</label>
+                            <input
+                                type="password"
+                                value={passwordValue}
+                                onChange={(e) => setPasswordValue(e.target.value)}
+                                placeholder="Enter your password"
+                            />
+                        </div>
+                        <p className="important-message">
+                            WE NEVER STORE YOUR PASSWORDS, WE JUST ENCODE IT IN A IMAGE AND RETURN IT TO YOU
+                        </p>
+                        <div className="modal-actions">
+                            <button className="cancel-btn" onClick={() => setIsModalOpen(false)}>Cancel</button>
+                            <button className="submit-btn" onClick={() => setIsModalOpen(false)}>Encode</button>
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {isDecodeModalOpen && (
+                <div className="modal-overlay">
+                    <div className="modal-content">
+                        <h2>Decode Password</h2>
+                        <div className="input-group">
+                            <label>Upload Image</label>
+                            <input
+                                type="file"
+                                accept="image/*"
+                                onChange={(e) => {
+                                    if (e.target.files && e.target.files.length > 0) {
+                                        setDecodeImage(e.target.files[0]);
+                                    }
+                                }}
+                            />
+                            {decodeImage && (
+                                <img
+                                    src={URL.createObjectURL(decodeImage)}
+                                    alt="Preview"
+                                    className="image-preview"
+                                />
+                            )}
+                        </div>
+                        <div className="input-group">
+                            <label>Hash-code</label>
+                            <input
+                                type="text"
+                                value={decodeHash}
+                                onChange={(e) => setDecodeHash(e.target.value)}
+                                placeholder="Enter your hash-code"
+                            />
+                        </div>
+                        <p className="important-message-green">
+                            YOU CAN COPY IT FROM THE TABLE
+                        </p>
+                        <div className="modal-actions">
+                            <button className="cancel-btn" onClick={() => setIsDecodeModalOpen(false)}>Cancel</button>
+                            <button className="submit-btn" onClick={() => setIsDecodeModalOpen(false)}>Decode</button>
+                        </div>
+                    </div>
+                </div>
+            )}
+
             <div className="data-table">
                 <table className="password-table">
                     <thead>
@@ -93,6 +178,9 @@ const PasswordData: React.FC = () => {
                         ))}
                     </tbody>
                 </table>
+            </div>
+            <div className="how-to-encode-decode">
+
             </div>
         </div>
     );
