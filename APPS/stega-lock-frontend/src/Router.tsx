@@ -1,6 +1,7 @@
 import type { RouteObject } from "react-router-dom";
 import Layout from "./Pages/Layout/Layout";
 import Home from "./Pages/Home/Home";
+import Landing from "./Pages/Landing/Landing";
 
 const routeConfig: RouteObject[] = [
     {
@@ -9,6 +10,10 @@ const routeConfig: RouteObject[] = [
         children: [
             {
                 path: "/",
+                element: <Landing />
+            },
+            {
+                path: "/home",
                 element: <Home />
             },
             {

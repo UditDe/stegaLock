@@ -1,23 +1,64 @@
+// :root {
+//   font-family: 'Inter', system-ui, sans-serif;
+//   font-optical-sizing: auto;
+//   font-style: normal;
+//   overflow-x: hidden;
+// }
+
+// body {
+//   margin: 0;
+//   background-color: #010409;
+//   color: #fefefe;
+//   /* Soft premium background */
+// }
+
+// a {
+//   text-decoration: none;
+//   color: inherit;
+//   /* this removes the default color */
+// }
+
+// * {
+//   box-sizing: border-box;
+// }
+
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Mona+Sans:wght@400;500;600;700&display=swap");
+
 :root {
-  font-family: 'Inter', system-ui, sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  overflow-x: hidden;
-}
+    --bg-canvas: #0d1117;
+    --bg-overlay: #161b22;
+    --bg-subtle: #1c2128;
 
-body {
-  margin: 0;
-  background-color: #010409;
-  color: #fefefe;
-  /* Soft premium background */
-}
+    --border-default: #30363d;
+    --border-muted: #21262d;
 
-a {
-  text-decoration: none;
-  color: inherit;
-  /* this removes the default color */
+    --fg-default: #e6edf3;
+    --fg-muted: #8b949e;
+    --fg-subtle: #6e7681;
+
+    --accent-blue: #58a6ff;
+    --accent-blue-dim: #1f6feb;
+    --accent-green: #3fb950;
+    --accent-purple: #bc8cff;
+    --accent-orange: #ffa657;
+
+    --diff-add: rgba(63, 185, 80, 0.15);
+    --diff-add-border: rgba(63, 185, 80, 0.4);
 }
 
 * {
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg-canvas);
+    color: var(--fg-default);
+    font-family: "Mona Sans", sans-serif;
+    overflow-x: hidden;
 }
